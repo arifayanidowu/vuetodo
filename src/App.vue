@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Header/>
     <Todos :todos="todos" @del-todo="deleteTodo"/>
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos.vue";
+import Todos from "@/components/Todos.vue";
+import Header from "@/components/layout/Header";
 export default {
   name: "app",
   components: {
-    Todos
+    Todos,
+    Header
   },
   data() {
     return {
