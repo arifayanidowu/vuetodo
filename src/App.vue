@@ -1,53 +1,20 @@
 <template>
   <div id="app">
     <Header/>
-    <AddTodo @add-todo="addTodo"/>
-    <Todos :todos="todos" @del-todo="deleteTodo"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Todos from "@/components/Todos.vue";
 import Header from "@/components/layout/Header";
-import AddTodo from "@/components/AddTodo";
 export default {
   name: "app",
   components: {
-    Todos,
-    Header,
-    AddTodo
-  },
-  data() {
-    return {
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    };
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = [...this.todos.filter(todo => todo.id !== id)];
-    },
-    addTodo(newTodo) {
-      this.todos = [...this.todos, newTodo];
-    }
+    Header
   }
 };
 </script>
+
 
 <style>
 * {
@@ -74,5 +41,22 @@ body {
 }
 .btn:hover {
   background: #666;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+.align-center {
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
