@@ -29,7 +29,7 @@ export default {
   methods: {
     deleteTodo(id) {
       axios
-        .delete(`http://jsonplaceholder.typicode.com/todos/${id}`)
+        .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
         .then(
           ({ data }) =>
             (this.todos = [...this.todos.filter(todo => todo.id !== id)])
@@ -39,7 +39,7 @@ export default {
     addTodo(newTodo) {
       const { title, completed } = newTodo;
       axios
-        .post("http://jsonplaceholder.typicode.com/todos", {
+        .post("https://jsonplaceholder.typicode.com/todos", {
           title,
           completed
         })
@@ -52,7 +52,7 @@ export default {
   created() {
     this.loading = !this.loading;
     axios
-      .get("http://jsonplaceholder.typicode.com/todos?_limit=5")
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then(({ data }) => {
         this.todos = data;
         this.loading = false;
