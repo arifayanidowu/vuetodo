@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Header/>
     <AddTodo @add-todo="addTodo"/>
     <div v-if="loading === true">
       <img src="../assets/loading.gif" alt="Loading">
@@ -14,13 +13,11 @@
 /* eslint-disable */
 import axios from "axios";
 import Todos from "@/components/Todos.vue";
-import Header from "@/components/layout/Header";
 import AddTodo from "@/components/AddTodo";
 export default {
   name: "Home",
   components: {
     Todos,
-    Header,
     AddTodo
   },
   data() {
